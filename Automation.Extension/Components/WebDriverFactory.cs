@@ -37,6 +37,34 @@ namespace Automation.Extension.Components
         private IWebDriver GetRemoteIE() =>
     new RemoteWebDriver(new Uri(driverParam.Binaries), new InternetExplorerOptions());
 
+        //Returns the driver instance based on driverparam input
+        public IWebDriver Get()
+        {
+            if (!String.Equals(driverParam.Source.ToUpper(),"REMOTE",StringComparison.OrdinalIgnoreCase))
+            {
+                return GetLocalDriver();
+            }
+            return GetRemoteDriver();
+        }
+
+        private IWebDriver GetLocalDriver()
+        {
+            switch (driverParam.Driver.ToUpper())
+	        {
+                case "IE": return GetIE();
+                case "CHROME": 
+		        default: return GetChrome();
+	        }
+        }
+        private IWebDriver GetRemoteDriver()
+        {
+            switch (driverParam.Driver.ToUpper())
+            {
+                case "IE": return GetRemoteIE();
+                case "CHROME":
+                default: return GetRemoteChrome();
+            }
+        }
 
         private static DriversParams LoadParam(string driverParamsJson)
         {

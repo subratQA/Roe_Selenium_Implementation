@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.Extension", "Automation.Extension\Automation.Extension.csproj", "{937EE566-0FE0-4FF6-B044-DFC87D71FC32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automation.Extension", "Automation.Extension\Automation.Extension.csproj", "{937EE566-0FE0-4FF6-B044-DFC87D71FC32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automtion.Testing", "Automtion.Testing\Automtion.Testing.csproj", "{2101A973-88C0-4E17-A07A-5708F7D11A03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automtion.Testing", "Automtion.Testing\Automtion.Testing.csproj", "{2101A973-88C0-4E17-A07A-5708F7D11A03}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automation.Core", "Automation.Core\Automation.Core.csproj", "{6820C3FB-403A-46C4-A10C-B40AEF8F92B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automation.API", "Automation.API\Automation.API.csproj", "{F8870943-71E8-4B45-BA2E-3CDE35198198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.Framework.UI", "Automation.Framework.UI\Automation.Framework.UI.csproj", "{52097C3B-CD1A-445F-9F49-E0750BE8F902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.Framework.RestAPI", "Automation.Framework.RestAPI\Automation.Framework.RestAPI.csproj", "{8F626734-FEC4-44DE-A9A3-EAA1B064699F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{2101A973-88C0-4E17-A07A-5708F7D11A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2101A973-88C0-4E17-A07A-5708F7D11A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2101A973-88C0-4E17-A07A-5708F7D11A03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6820C3FB-403A-46C4-A10C-B40AEF8F92B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6820C3FB-403A-46C4-A10C-B40AEF8F92B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6820C3FB-403A-46C4-A10C-B40AEF8F92B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6820C3FB-403A-46C4-A10C-B40AEF8F92B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8870943-71E8-4B45-BA2E-3CDE35198198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8870943-71E8-4B45-BA2E-3CDE35198198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8870943-71E8-4B45-BA2E-3CDE35198198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8870943-71E8-4B45-BA2E-3CDE35198198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52097C3B-CD1A-445F-9F49-E0750BE8F902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52097C3B-CD1A-445F-9F49-E0750BE8F902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52097C3B-CD1A-445F-9F49-E0750BE8F902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52097C3B-CD1A-445F-9F49-E0750BE8F902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F626734-FEC4-44DE-A9A3-EAA1B064699F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F626734-FEC4-44DE-A9A3-EAA1B064699F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F626734-FEC4-44DE-A9A3-EAA1B064699F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F626734-FEC4-44DE-A9A3-EAA1B064699F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

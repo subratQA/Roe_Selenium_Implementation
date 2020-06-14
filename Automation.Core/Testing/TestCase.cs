@@ -1,5 +1,8 @@
 ﻿using Automation.Core.Logging;
+using Automation.Extension.Components;
+using Automation.Extension.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +18,11 @@ namespace Automation.Core.Testing
         private int attempts;
         private ILogger logger;
 
+
+        //properties
+        public bool Actual { get; private set; }
+        public IWebDriver Driver { get; private set; }
+
         //initialize all the fields
         protected TestCase()
         {
@@ -26,6 +34,7 @@ namespace Automation.Core.Testing
         public abstract bool AutomationTest(IDictionary<string, object> testParams);
         public TestCase Execute()
         {
+            Driver = Get();
             for (int i = 0; i < attempts; i++)
             {
                 try
@@ -52,12 +61,15 @@ namespace Automation.Core.Testing
                     logger.Debug(ex, ex.Message);
                     break;
                 }
+                finally
+                {
+                    Driver?.Close();
+                    Driver?.Dispose();
+                }
             }
             return this; 
         }
 
-        //properties
-        public bool Actual { get; private set; }
 
         //Configurations
         public TestCase WithTestParams(IDictionary<string, object> testParams)
@@ -74,6 +86,23 @@ namespace Automation.Core.Testing
         {
             this.logger = logger;
             return this;
+        }
+
+        private IWebDriver Get()
+        {
+            //constants
+            const string DRIVER = "driver";
+
+            //deafults
+            var driverParams = new DriversParams { Binaries = ".", Driver = "CHROME",Source="" };
+
+            //change driver if exists
+            if (testParams?.ContainsKey(DRIVER) == true)
+            {
+                driverParams.Driver = $"{testParams[DRIVER]}";
+            }
+            //Create driver if driver key not exist
+            return new WebDriverFactory(driverParams).Get();
         }
     }
 }

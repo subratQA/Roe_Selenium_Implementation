@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Automation.Core.Components
 {
-    public abstract class FluentUI : IFluent
+    public class FluentUI : IFluent
     {
         public IWebDriver Driver { get; }
         public ILogger Logger { get; }
 
-        protected FluentUI(IWebDriver driver) 
+        public FluentUI(IWebDriver driver) 
             : this(driver, new TraceLogger()) {  }
 
-        protected FluentUI(IWebDriver driver, ILogger logger)
+        public FluentUI(IWebDriver driver, ILogger logger)
         {
             Driver = driver;
             Logger = logger;

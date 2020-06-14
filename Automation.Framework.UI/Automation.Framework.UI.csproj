@@ -6,7 +6,12 @@
 
   <ItemGroup>
     <Folder Include="Components\" />
-    <Folder Include="Pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Automation.API\Automation.API.csproj" />
+    <ProjectReference Include="..\Automation.Core\Automation.Core.csproj" />
+    <ProjectReference Include="..\Automation.Extension\Automation.Extension.csproj" />
   </ItemGroup>
 
 </Project>

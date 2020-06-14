@@ -112,7 +112,15 @@ namespace Automation.Extension.Components
             }
             return element;
         }
-
-
+        public static IWebDriver SubmitForms(this IWebDriver driver, int index)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript($"docement.forms[{index}].submit();");
+            return driver;
+        }
+        public static IWebDriver SubmitForms(this IWebDriver driver, string id)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript($"docement.forms[\"{id}\"].submit();");
+            return driver;
+        }
     }
 }
